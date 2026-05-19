@@ -1,6 +1,5 @@
 import { type BaybayinCharacter } from "../types/alphabet";
 
-// stroke paths relative 100x100 svg canvas
 
 export const alphabetCharacters: BaybayinCharacter[] = [
   // VOWELS

@@ -144,16 +144,15 @@ const LearnScreen: React.FC = () => {
             </View>
 
             <Text style={styles.featuredCardLabel}>
-              Continue Learning
+              {t("learn.continueLearning")}
             </Text>
 
             <Text style={styles.featuredCardTitle}>
-              Practice Writing
+              {t("learn.practiceWriting")}
             </Text>
 
             <Text style={styles.featuredCardDescription}>
-              Improve your Baybayin strokes with guided tracing
-              exercises and character repetition.
+              {t("learn.cardDescription")}
             </Text>
           </TouchableOpacity>
 

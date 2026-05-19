@@ -26,6 +26,8 @@ export const tlTranslation = {
     space: "espasyo",
     delete: "Burahin",
     tip: "Tip",
+    selected: "Napili",
+    current: "Kasalukuyan",
   },
   navigation: {
     learn: "Mag-aral",
@@ -136,7 +138,7 @@ export const tlTranslation = {
         description: "Marka sa ibaba",
         examples: [],
       },
-    },
+    }
   },
   learn: {
     welcome: "Maligayang pagbabalik",
@@ -147,6 +149,10 @@ export const tlTranslation = {
     yourProgress: "Iyong Progreso",
     lettersLearned: "Mga titik na natutunan",
     practiceCompleted: "Nakumpletong sesyon ng pagsasanay",
+    continueLearning: "Magpatuloy sa Pag-aaral",
+    practiceWriting: "Magsanay sa Pagsulat",
+    cardDescription:
+      "Pagbutihin ang iyong mga guhit sa Baybayin gamit ang gabay na pagsubaybay at paulit-ulit na pagsasanay ng mga karakter.",
     options: {
       alphabetTable: {
         title: "Talahanayan ng Alpabeto",
@@ -185,6 +191,8 @@ export const tlTranslation = {
     stroke: "Stroke",
     resetPractice: "I-reset ang Pagsasanay",
     strokeGuide: "Gabay sa Stroke",
+    showStrokeDetails: "Ipakita ang mga detalye",
+    hideStrokeDetails: "Itago ang mga detalye",
     strokeOf: "Stroke {{current}} ng {{total}}",
     direction: "Direksyon",
     characterComplete: "Kumpleto na ang Karakter",
@@ -202,6 +210,22 @@ export const tlTranslation = {
     restartingCharacter: "Sinisimulang muli ang karakter...",
     followGuide:
       "Sundan ang naka-highlight na gabay na stroke (min {{min}}% katumpakan)",
+    drawCharacter: "Iguhit ang karakter",
+    strokePreview: "Preview ng Stroke {{number}}",
+    drawStrokeNext: "Guhitin ang stroke na ito",
+    strokeProgress: "{{currentStroke}}/{{strokes}} na mga stroke",
+    characterMastered:
+      "Napakagaling! Ganap mo nang natutunan ang karakter na ito!",
+    keepPracticing:
+      "Magaling! Ipagpatuloy lang ang pagsasanay para mas mapahusay ito!",
+    keepImproving:
+      "Ipagpatuloy ang pagsasanay! Mas gagaling ka sa bawat pagkakataon!",
+    characterRecognized: "Nai-recognize ang karakter!",
+    characterNotRecognized: "Hindi nai-recognize ang karakter!",
+    resettingCanvas: "Nirereset ang canvas...",
+    nextCharacter: "Susunod na Karakter →",
+    accuracy: "Katumpakan: {{confidence}}%",
+    selectCharacter: "Pumili ng Karakter",
   },
   practice: {
     difficulty: {

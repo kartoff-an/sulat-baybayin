@@ -50,9 +50,9 @@ const CharacterSelector: React.FC<CharacterSelectorProps> = ({
   }, {} as Record<string, BaybayinCharacter[]>);
 
   const categoryNames: Record<string, string> = {
-    vowels: "Vowels (A, I/E, U/O)",
-    consonants: "Consonants (Ba, Ka, Da, etc.)",
-    special: "Special Marks (Virama, Kudlit)",
+    vowels: t("alphabet.categories.vowels"),
+    consonants: t("alphabet.categories.consonants"),
+    special: t("alphabet.categories.special"),
   };
 
   return (
@@ -88,7 +88,7 @@ const CharacterSelector: React.FC<CharacterSelectorProps> = ({
           onPress={() => setIsOpen(false)}
         >
           <View style={styles.modalContent}>
-            <Text style={styles.modalTitle}>Select a Character</Text>
+            <Text style={styles.modalTitle}>{t("writing.selectCharacter")}</Text>
             <ScrollView
               style={styles.modalList}
               showsVerticalScrollIndicator={false}
@@ -126,7 +126,7 @@ const CharacterSelector: React.FC<CharacterSelectorProps> = ({
                       </View>
                       {char.id === selected.id && (
                         <View style={styles.selectedBadge}>
-                          <Text style={styles.selectedBadgeText}>Selected</Text>
+                          <Text style={styles.selectedBadgeText}>{t("common.selected")}</Text>
                         </View>
                       )}
                     </TouchableOpacity>

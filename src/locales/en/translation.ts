@@ -26,6 +26,8 @@ export const enTranslation = {
     space: "space",
     delete: "Delete",
     tip: "Tip",
+    selected: "Selected",
+    current: "Current",
   },
   navigation: {
     learn: "Learn",
@@ -136,7 +138,7 @@ export const enTranslation = {
         description: "Below mark",
         examples: [],
       },
-    },
+    }
   },
   learn: {
     welcome: "Welcome back",
@@ -147,6 +149,10 @@ export const enTranslation = {
     yourProgress: "Your Progress",
     lettersLearned: "Letters learned",
     practiceCompleted: "Practice sessions completed",
+    continueLearning: "Continue Learning",
+    practiceWriting: "Practice Writing",
+    cardDescription:
+      "Improve your Baybayin strokes with guided tracing exercises and character repetition.",
     options: {
       alphabetTable: {
         title: "Alphabet Table",
@@ -183,6 +189,8 @@ export const enTranslation = {
     stroke: "Stroke",
     resetPractice: "Reset Practice",
     strokeGuide: "Stroke Guide",
+    showStrokeDetails: "Show details",
+    hideStrokeDetails: "Hide details",
     strokeOf: "Stroke {{current}} of {{total}}",
     direction: "Direction",
     characterComplete: "Character Complete",
@@ -198,6 +206,19 @@ export const enTranslation = {
     willRestart: "Character will restart from beginning",
     restartingCharacter: "Restarting character...",
     followGuide: "Follow the highlighted guide stroke (min {{min}}% accuracy)",
+    drawCharacter: "Draw character",
+    strokePreview: "Stroke {{number}} Preview",
+    drawStrokeNext: "Draw this stroke next",
+    strokeProgress: "{{currentStroke}}/{{strokes}} strokes",
+    characterMastered: "Amazing! You've mastered this character!",
+    keepMastering: "Good job! Keep practicing to perfect it!",
+    keepImproving: "Keep practicing! You'll get better each time!",
+    characterRecognized: "Character Recognized!",
+    characterNotRecognized: "Character Not Recognized!",
+    resettingCanvas: "Resettin canvas...",
+    nextCharacter: "Next character →",
+    accuracy: "Accuracy: {{confidence}}%",
+    selectCharacter: "Select a Character",
   },
   practice: {
     difficulty: {

@@ -212,9 +212,6 @@ const PracticeWritingScreen: React.FC = () => {
                     <Text style={styles.blindCharacter}>
                       {selectedCharacter.latin.toUpperCase()}
                     </Text>
-                    <Text style={styles.blindBaybayin}>
-                      {selectedCharacter.baybayin}
-                    </Text>
                   </View>
 
                   {/* Progress */}

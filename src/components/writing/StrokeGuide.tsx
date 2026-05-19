@@ -230,9 +230,9 @@ const StrokeGuide: React.FC<StrokeGuideProps> = ({
           </View>
           {isComplete && (
             <Text style={[styles.accuracyMessage, { color: overallColor }]}>
-              {accuracy >= 80 ? "Excellent! You've mastered this character!" :
-                accuracy >= 50 ? "Good job! Keep practicing to perfect it!" :
-                  "Keep practicing! You'll get better each time!"}
+              {accuracy >= 80 ? t("writing.characterMastered") :
+                accuracy >= 50 ? t("writing.keepPracticing") :
+                  t("writing.keepImproving")}
             </Text>
           )}
         </View>
@@ -243,7 +243,10 @@ const StrokeGuide: React.FC<StrokeGuideProps> = ({
         <View style={styles.progressHeader}>
           <Text style={styles.progressLabel}>{t("writing.progress")}</Text>
           <Text style={styles.progressValue}>
-            {currentStroke}/{strokes} strokes
+            {t("writing.strokeProgress", {
+              currentStroke,
+              strokes,
+            })}
           </Text>
         </View>
         <View style={styles.progressBar}>
@@ -263,7 +266,7 @@ const StrokeGuide: React.FC<StrokeGuideProps> = ({
         activeOpacity={0.7}
       >
         <Text style={styles.toggleButtonText}>
-          {showDetails ? "Hide Details" : "Show Details"}
+          {showDetails ? t("writing.hideStrokeDetails") : t("writing.showStrokeDetails")}
         </Text>
         <ChevronRight
           size={12}
@@ -341,7 +344,7 @@ const StrokeGuide: React.FC<StrokeGuideProps> = ({
                 {/* Current indicator */}
                 {isCurrent && !isCompleted && (
                   <View style={styles.currentBadge}>
-                    <Text style={styles.currentBadgeText}>Current</Text>
+                    <Text style={styles.currentBadgeText}>{t("common.current")}</Text>
                   </View>
                 )}
               </TouchableOpacity>
@@ -354,7 +357,7 @@ const StrokeGuide: React.FC<StrokeGuideProps> = ({
       {showDetails && character.strokes[selectedStroke] && (
         <View style={styles.previewSection}>
           <Text style={styles.previewTitle}>
-            Stroke {selectedStroke + 1} Preview
+            {t("writing.strokePreview", { number: selectedStroke + 1 })}
           </Text>
           <View style={styles.previewContainer}>
             {renderStrokePreview()}
@@ -369,31 +372,10 @@ const StrokeGuide: React.FC<StrokeGuideProps> = ({
                 <View style={styles.currentStrokeHint}>
                   <CheckCircle size={12} color={colors.primary} strokeWidth={1.5} />
                   <Text style={styles.currentStrokeHintText}>
-                    Draw this stroke next
+                    {t("writing.drawStrokeNext")}
                   </Text>
                 </View>
               )}
-            </View>
-          </View>
-        </View>
-      )}
-
-      {/* Completion Message */}
-      {isComplete && (
-        <View style={styles.completionSection}>
-          <View style={[styles.completionBox, { backgroundColor: getAccuracyBackground(accuracy) }]}>
-            <CheckCircle size={20} color={overallColor} strokeWidth={1.5} />
-            <View style={styles.completionContent}>
-              <Text style={[styles.completionTitle, { color: overallColor }]}>
-                {t("writing.characterComplete")}
-              </Text>
-              <Text style={styles.completionMessage}>
-                {accuracy >= 80
-                  ? "Amazing! You've mastered this character!"
-                  : accuracy >= 50
-                    ? "Good job! A few more practices and you'll perfect it!"
-                    : "Keep practicing! You'll get better each time!"}
-              </Text>
             </View>
           </View>
         </View>

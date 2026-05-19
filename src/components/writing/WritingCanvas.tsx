@@ -299,20 +299,6 @@ const WritingCanvas: React.FC<WritingCanvasProps> = ({
     });
   }, [character.strokes, currentStroke, completedStrokes.length, isBlindMode]);
 
-  // Get success message based on accuracy
-  const getSuccessMessage = (confidence: number) => {
-    if (confidence >= 80) return "Excellent! Character recognized!";
-    if (confidence >= 70) return "Great job! Character recognized!";
-    if (confidence >= 60) return "Good work! Character recognized!";
-    return "Character recognized! Keep practicing!";
-  };
-
-  // Get error message based on accuracy
-  const getErrorMessage = (confidence: number) => {
-    if (confidence >= 30) return "Almost there! Try again!";
-    return "Character not recognized. Try again!";
-  };
-
   // Get validation style based on validity
   const getValidationStyle = (isValid: boolean) => {
     if (isValid) {
@@ -333,8 +319,6 @@ const WritingCanvas: React.FC<WritingCanvasProps> = ({
 
   const successStyle = getValidationStyle(true);
   const errorStyle = getValidationStyle(false);
-  const successMessage = getSuccessMessage(validationResult.confidence);
-  const errorMessage = getErrorMessage(errorConfidence);
 
   return (
     <View style={styles.container}>
@@ -418,13 +402,10 @@ const WritingCanvas: React.FC<WritingCanvasProps> = ({
             <CheckCircle2 size={48} color={successStyle.iconColor} strokeWidth={1.5} />
             <View style={styles.validationContent}>
               <Text style={[styles.successTitle, { color: successStyle.textColor }]}>
-                Character Recognized!
-              </Text>
-              <Text style={[styles.successMessage, { color: successStyle.textColor }]}>
-                {successMessage}
+                {t("writing.characterRecognized")}
               </Text>
               <Text style={[styles.validationAccuracy, { color: successStyle.textColor }]}>
-                Accuracy: {Math.round(validationResult.confidence)}%
+                {t("writing.accuracy", { confidence: Math.round(validationResult.confidence) })}
               </Text>
             </View>
             {onNextCharacter && (
@@ -433,7 +414,7 @@ const WritingCanvas: React.FC<WritingCanvasProps> = ({
                 style={[styles.nextButton, { backgroundColor: successStyle.iconColor }]}
                 activeOpacity={0.7}
               >
-                <Text style={styles.nextButtonText}>Next Character →</Text>
+                <Text style={styles.nextButtonText}>{t("writing.nextCharacter")}</Text>
               </TouchableOpacity>
             )}
           </View>
@@ -450,13 +431,10 @@ const WritingCanvas: React.FC<WritingCanvasProps> = ({
             <XCircle size={48} color={errorStyle.iconColor} strokeWidth={1.5} />
             <View style={styles.validationContent}>
               <Text style={[styles.errorTitle, { color: errorStyle.textColor }]}>
-                Character Not Recognized
-              </Text>
-              <Text style={[styles.errorMessage, { color: errorStyle.textColor }]}>
-                {errorMessage}
+                {t("writing.characterNotRecognized")}
               </Text>
               <Text style={[styles.resetNotice, { color: errorStyle.textColor }]}>
-                Resetting canvas...
+                {t("writing.resettingCanvas")}
               </Text>
             </View>
           </View>
